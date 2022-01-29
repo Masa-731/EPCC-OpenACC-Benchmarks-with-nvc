@@ -14,12 +14,14 @@
 
 # Makefile for OpenACC Benchmarks
 
+# default compiler: nvc
 # nvc's `-fast` option seems to break some benchmarks for some reason, so it is not recommended for now (version 22.1).
-ifeq ($(COMP), nvc)
+ifneq ($(COMP), gcc)
 CC = nvc
 CFLAGS = -acc -mp=gpu -Minfo=accel -mcmodel=medium -gpu=cc86 -tp=host -g -lm
 LFLAGS =
 else
+# gcc currently has some syntax problems and fails to compile (version 11.0), with reasons unknown.
 CC = gcc
 CFLAGS = -march=native -fopenacc -O2 -mcmodel=medium -g -lm
 LFLAGS =
@@ -34,6 +36,7 @@ default: oa
 
 oa : $(objects)
 	$(CC) $(CFLAGS) -o $@ $^ $(LFLAGS)
+	mv $(objects) ../bin
 
 .PHONY: clean
 

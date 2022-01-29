@@ -11,5 +11,4 @@ run:
 	cd $(BIN_DIR); ./oa
 
 clean:
-	cd $(SRC_DIR); 		make clean
 	cd $(BIN_DIR);		rm -f *
