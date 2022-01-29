@@ -13,6 +13,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
+0. Modifications
+-----------------------------------------------------------------------------------------------
+The main objective of this fork of EPCC OpenACC Benchmarks is to compile and run the suite on modern software & hardware environment.
+
 
 Welcome to the EPCC OpenACC Benchmark Suite.
 
