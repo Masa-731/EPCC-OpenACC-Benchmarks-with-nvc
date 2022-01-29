@@ -12,10 +12,10 @@
 /* See the License for the specific language governing permissions and */
 /* limitations under the License. */
 
+#pragma once
 
 #define SMALL 1
 double himeno_main();
 double second();
 double jacobi(int);
 void initmt();
-

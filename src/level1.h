@@ -12,8 +12,7 @@
 /* See the License for the specific language governing permissions and */
 /* limitations under the License. */
 
-#ifndef LEVELONE
-#define LEVELONE
+#pragma once
 
 double twomm();
 double threemm();
@@ -28,5 +27,3 @@ double gesummv();
 double gemm();
 double twodconv();
 double threedconv();
-
-#endif

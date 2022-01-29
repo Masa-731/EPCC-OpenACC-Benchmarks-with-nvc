@@ -12,19 +12,6 @@
 /* See the License for the specific language governing permissions and */
 /* limitations under the License. */
 
-double contig_htod();
-double contig_dtoh();
-double sliced_dtoh();
-double sliced_htod();
-double kernels_if();
-double parallel_if();
-double parallel_private();
-double parallel_firstprivate();
-double kernels_combined();
-double parallel_combined();
-double update();
-double kernels_invoc();
-double parallel_invoc();
-double parallel_reduction();
-double kernels_reduction();
+#pragma once
 
+double stencil();

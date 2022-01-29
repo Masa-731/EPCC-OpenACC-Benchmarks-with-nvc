@@ -1,5 +1,5 @@
 # Copyright (c) 2013 The University of Edinburgh.
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -14,22 +14,15 @@
 
 # Makefile for OpenACC Benchmarks
 
-ifeq ($(COMP),pgi)
-CC = pgcc
-CFLAGS = -acc -Minfo=accel -mcmodel=medium
-LFLAGS = 
-else ifeq ($(COMP),craypgi)
-CC = cc
-CFLAGS = -acc -Minfo=accel -mcmodel=medium
-LFLAGS = 
-else ifeq ($(COMP),hmpp)
-CC = hmpp --hdpp-off --color gcc
-CFLAGS = 
-LFLAGS = -fopenmp -lm
-else ifeq ($(COMP),cray)
-CC = cc
-CFLAGS = -hlist=a -h acc_model=auto_async_none
-LFLAGS = 
+# nvc's `-fast` option seems to break some benchmarks for some reason, so it is not recommended for now (version 22.1).
+ifeq ($(COMP), nvc)
+CC = nvc
+CFLAGS = -acc -mp=gpu -Minfo=accel -mcmodel=medium -gpu=cc86 -tp=host -g -lm
+LFLAGS =
+else
+CC = gcc
+CFLAGS = -march=native -fopenacc -O2 -mcmodel=medium -g -lm
+LFLAGS =
 endif
 
 objects = common.o main.o level0.o level1.o 27stencil.o le_core.o himeno.o
