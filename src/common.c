@@ -126,7 +126,7 @@ void print_results(char *name, double testtime, double tested) {
     sprintf(compiler, "GCC");
 #endif
 
-    printf("%s %s %d %f %f\n", compiler, name, datasize, testtime * 1e+6, CONF95 * testsd * 1e+6);
+    printf("%7.7s\t%20.20s\t\t%d\t\t%.6f\t\t%.6f\n", compiler, name, datasize, testtime * 1e+6, CONF95 * testsd * 1e+6);
 }
 
 

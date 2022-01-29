@@ -44,6 +44,8 @@ int main(int argc, char **argv) {
     wul();
 
 
+    printf("\033[1mCOMPILER\tBenchmark_Name\t\tData size\tMean_Runtime(s)\t\tStd_Deviation\033[0m\n");
+
     /* Level 0 Tests - Speeds and Feeds */
     sprintf(testName, "ContigH2D");
     benchmark(testName, &contig_htod);
