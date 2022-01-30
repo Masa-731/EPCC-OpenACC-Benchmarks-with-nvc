@@ -16,7 +16,7 @@ limitations under the License.
 0. Modifications
 -----------------------------------------------------------------------------------------------
 The main objective of this fork of EPCC OpenACC Benchmarks is to compile and run the suite on modern software & hardware environment.
-Currently I've confirmed that it can be compiled with nvc 22.1 and run on my system with 5950X CPU and 3090 GPU (cc=86).
+Currently I've confirmed that it can be compiled with nvc 22.1 and run on my system with 5950X CPU and 3090 GPU (cc=86) (with some cabiats, refer to `src/Makefile`).
 
 
 Welcome to the EPCC OpenACC Benchmark Suite.
